@@ -28,6 +28,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(615, 533)
+        MainWindow.showMaximized()
         icon = QtGui.QPixmap(config['database']['bot_image'])
         icon = icon.scaled(200,200)
         MainWindow.setWindowIcon(QtGui.QIcon(icon))
@@ -94,7 +95,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
         self.inputMessage.setMaximumSize(QtCore.QSize(1000000, 60))
         font = QtGui.QFont()
         font.setFamily("AcadEref")
-        font.setPointSize(18)
+        font.setPointSize(20)
         self.inputMessage.setFont(font)
         self.inputMessage.setObjectName("inputMessage")
         self.horizontalLayout_2.addWidget(self.inputMessage)
@@ -192,7 +193,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
         
         text = QLabel()
         font = QtGui.QFont()
-        font.setPointSize(20)
+        font.setPointSize(25)
         text.setFont(font)
         text.setText(msg)
         text.setWordWrap(True)
@@ -233,6 +234,7 @@ class Ui_Digital_Immortality(QtWidgets.QWidget):
 
         Digital_Immortality.setObjectName("Digital_Immortality")
         Digital_Immortality.resize(576, 444)
+        Digital_Immortality.showMaximized()
         icon = QtGui.QPixmap(config['database']['app_icon'])
         icon = icon.scaled(64,64)
         Digital_Immortality.setWindowIcon(QtGui.QIcon(icon))
