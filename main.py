@@ -192,7 +192,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
 
         pos = QLabel()
         pos.setText(" ")
-        
+        self.scrollArea.verticalScrollBar().setValue(self.scrollArea.verticalScrollBar().maximum)
         Hbox = QtWidgets.QHBoxLayout()
         Hbox.setSpacing(10)
 
