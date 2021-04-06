@@ -164,19 +164,11 @@ class Ui_MainWindow(QtWidgets.QWidget):
         loop = QtCore.QEventLoop()
         QtCore.QTimer.singleShot(2000, loop.quit)
         loop.exec_()
-        self.send_message(1,"yes")
+        try:
+            self.send_message(1,config["chat"][msg])
+        except:
+            self.send_message(1,"Error")
         
-    def on_clear(self):
-        print(self.gridlayout.count())
-        
-        for i in range(self.gridlayout.count()):
-            if(self.gridlayout.itemAt(i).widget()):
-                self.gridlayout.itemAt(i).widget().deleteLater()
-
-        self.groupBox.setLayout(self.gridlayout)
-        self.scrollArea.setWidget(self.groupBox)
-
-        self.msg_count = 0
 
     def send_message(self,who,msg):
         # who==0 -> usr
